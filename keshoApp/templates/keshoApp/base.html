@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+
+  <nav class="p-4 flex gap-2 items-center bg-black text-white justify-end">
+    <a href="#">About</a>
+    {% if user.is_authenticated %}
+    <a href="">Home</a>
+    <a href="/babes" class="text-red-500">Babes</a>
+    <a href="/payment" class="text-red-500">Payment</a>
+    <a href="{% url 'logout' %}" class="text-red-500">Logout</a>
+    <a href="#">Jumpers</a>
+    <a href="#">Shop</a>
+    {% endif %}
+    
+</nav>
+
+{% block content %}
+    
+{% endblock %}  
+
+</body>
+</html>
+
